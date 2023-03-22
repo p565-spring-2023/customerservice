@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.p565.demo1.model.Customer;
 import edu.p565.demo1.repository.CustomerRepository;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/customers")
@@ -34,7 +35,7 @@ public class CustomerController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public int create(@RequestBody Customer customer){
+    public int create(@Valid @RequestBody Customer customer){
         return repository.create(customer);
     }
 

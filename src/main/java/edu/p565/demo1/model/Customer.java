@@ -2,9 +2,14 @@ package edu.p565.demo1.model;
 
 import java.util.Objects;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Customer {
     private int id;
+
+    @NotEmpty(message = "name cannot be empty.")
     private String name;
+
     private String email;
 
 

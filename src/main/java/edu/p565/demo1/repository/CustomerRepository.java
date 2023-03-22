@@ -28,7 +28,9 @@ public class CustomerRepository {
         if(c != null){
            c.setEmail(customer.getEmail());
            c.setName(customer.getEmail());
-        }
+        } else {
+            throw new IllegalStateException("customer with this id was not found.");
+         }
     }
 
     private Customer getById(int id){
@@ -41,7 +43,7 @@ public class CustomerRepository {
          if(c != null){
             customers.remove(c);
          } else {
-            throw new IllegalStateException("Customer with this id was not found.");
+            throw new IllegalStateException("customer with this id was not found.");
          }
     }
 }
