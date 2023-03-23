@@ -41,7 +41,7 @@ public class CustomerController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    public void update(@RequestBody Customer customer, @PathVariable int id){
+    public void update(@Valid @RequestBody Customer customer, @PathVariable int id){
         repository.update(customer, id);
     }
 
